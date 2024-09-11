@@ -7,3 +7,6 @@ RUN npm install
 COPY . .
 EXPOSE 3000
 CMD ["npm", "run", "start:dev"]
+
+COPY ./docker-entrypoint.sh /docker-entrypoint.sh
+ENTRYPOINT ["docker-entrypoint.sh"]

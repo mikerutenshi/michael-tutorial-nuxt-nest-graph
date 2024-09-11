@@ -7,10 +7,10 @@ services:
     restart: always
     # environment:
     #   WAIT_HOSTS: postgres:5432
-    # depends_on:
-    #   - postgres
+    depends_on:
+      - mysql
     ports:
-      - 3000:3000
+      - 3001:3000
     networks:
       - tutorial-network
     # #fix nitro worker eaddrinuse
@@ -28,18 +28,17 @@ services:
     ports:
       - 80:80
     restart: unless-stopped
-#   postgres:
-#     image: public.ecr.aws/docker/library/postgres:latest
-#     container_name: postgres
-#     volumes:
-#       - workflow-postgres-data:/var/lib/postgres/data
-#     environment:
-#       POSTGRES_PASSWORD: secret
-#       POSTgRES_USER: postgres
-#       POSTGRES_DB: workflow
+  mysql:
+    image: mysql:latest
+    container_name: mysql
+    volumes:
+      - tutorial-mysql-data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: secret
+      MYSQL_DATABASE: tutorial
 
-# volumes:
-#   workflow-postgres-data:
+volumes:
+  tutorial-mysql-data:
 
 networks:
   tutorial-network:
