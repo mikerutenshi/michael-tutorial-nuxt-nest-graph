@@ -1,6 +1,6 @@
 #!/bin/bash
 
 # Apply migrations
-npx prisma migrate dev
+prisma migrate dev --name init user
 
 exec "$@"

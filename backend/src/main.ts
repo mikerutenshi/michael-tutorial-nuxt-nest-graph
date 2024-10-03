@@ -1,6 +1,6 @@
 import { NestFactory } from '@nestjs/core'
 import { AppModule } from './app.module'
-import cookieParser from 'cookie-parser'
+import * as cookieParser from 'cookie-parser'
 import { ValidationPipe } from '@nestjs/common'
 
 async function bootstrap() {
@@ -11,6 +11,6 @@ async function bootstrap() {
       whitelist: true
     })
   )
-  await app.listen(3000)
+  await app.listen(process.env.PORT || 3001)
 }
 bootstrap()
