@@ -1,0 +1,54 @@
+{
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Launch index.html",
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "file": "${workspaceFolder}/index.html"
+    },
+    {
+      "name": "Launch localhost",
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "url": "http://localhost",
+      "webRoot": "${workspaceFolder}",
+      "firefoxExecutable": "D:\\Program Files\\Mozilla Firefox\\firefox.exe",
+      "pathMappings": [
+        {
+          "url": "http://localhost/_nuxt/plugins",
+          "path": "${workspaceFolder}/frontend/plugins"
+        },
+        {
+          "url": "http://localhost/_nuxt/app.vue",
+          "path": "${workspaceFolder}/frontend/app.vue"
+        },
+        {
+          "url": "http://localhost/_nuxt/components",
+          "path": "${workspaceFolder}/frontend/components"
+        },
+        {
+          "url": "http://localhost/_nuxt/components",
+          "path": "${workspaceFolder}/frontend/components"
+        }
+      ]
+    },
+    {
+      "name": "Attach",
+      "type": "firefox",
+      "request": "attach"
+    },
+    {
+      "name": "Launch WebExtension",
+      "type": "firefox",
+      "request": "launch",
+      "reAttach": true,
+      "addonPath": "${workspaceFolder}"
+    }
+  ]
+}

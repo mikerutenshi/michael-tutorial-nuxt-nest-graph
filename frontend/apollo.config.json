@@ -1,0 +1,9 @@
+{
+  "client": {
+    "service": {
+      "name": "backend",
+      "url": "http://localhost/api"
+    },
+    "includes": ["api/queries/*gql"]
+  }
+}
